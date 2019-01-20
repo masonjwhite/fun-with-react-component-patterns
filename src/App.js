@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Toggle from './02-render-prop/Toggle';
+import ToggleAlt from './03-render-prop-alt/Toggle-alt';
+import { ThemeProvider } from './05-context-provider/ThemeProvider';
+import { Heading, HeadingWithToggle } from './Heading';
+import PokemonListContainer from './04-container-component/PokemonListContainer';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+	render() {
+		return (
+			// Context provider
+			<ThemeProvider>
+				{/* Higher order components */}
+				<HeadingWithToggle componentPattern="HOC's" />
+
+				{/* Render prop */}
+				<Toggle>
+					{({ isToggled, toggle }) => (
+						<Heading
+							componentPattern="Render Props"
+							isToggled={isToggled}
+							toggle={toggle}
+						/>
+					)}
+				</Toggle>
+
+				{/* Render prop alternative example */}
+				<ToggleAlt
+					render={({ toggle, isToggled }) => (
+						<Heading
+							componentPattern="Render Props Alt."
+							isToggled={isToggled}
+							toggle={toggle}
+						/>
+					)}
+				/>
+
+				{/* Container component example */}
+				<PokemonListContainer />
+			</ThemeProvider>
+		);
+	}
 }
 
 export default App;
