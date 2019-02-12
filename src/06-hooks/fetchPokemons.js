@@ -25,8 +25,11 @@ export default async (setType, setPokemon) => {
         firstTenPokemonStats.push(pokemonStats);
     }
 
-	return {
-		type: name,
-		pokemons: firstTenPokemonStats
-	}
+    /*
+        Call state getters passed in from component
+        I'm not sold if this is a good idea or not (introduces side effect by setting state)
+        Breaks functional programming core concept of a function doing one thing
+    */
+    setType(name);
+    setPokemon(firstTenPokemonStats);
 }

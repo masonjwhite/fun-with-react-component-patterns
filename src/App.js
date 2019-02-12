@@ -4,6 +4,7 @@ import ToggleAlt from './03-render-prop-alt/Toggle-alt';
 import { ThemeProvider } from './05-context-provider/ThemeProvider';
 import { Heading, HeadingWithToggle } from './Heading';
 import PokemonListContainer from './04-container-component/PokemonListContainer';
+import PokemonListContainerHooks from './06-hooks/PokemonListContainer';
 
 class App extends Component {
 	render() {
@@ -37,6 +38,9 @@ class App extends Component {
 
 				{/* Container component example */}
 				<PokemonListContainer />
+
+				{/* Container component w/ hooks example */}
+				<PokemonListContainerHooks />
 			</ThemeProvider>
 		);
 	}
