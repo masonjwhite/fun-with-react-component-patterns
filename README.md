@@ -21,6 +21,7 @@ This project was bootstrapped with create-react-app. It contains several example
 - 03-Render Prop Alternate (using traditional "render" prop)
 - 04-Container Component
 - 05-Context/Provider Pattern
+- 06-React Hooks
 
 ## TODO
 
