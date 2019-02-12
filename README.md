@@ -26,4 +26,3 @@ This project was bootstrapped with create-react-app. It contains several example
 ## TODO
 
 - [] Implement React Router so examples render on different pages
-- [] React Hooks
